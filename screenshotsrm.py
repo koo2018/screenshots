@@ -21,7 +21,6 @@ def main():
 
     for file in os.listdir(desktop_path):
         if 'Снимок экрана' in file:
-            ctime = datetime.utcfromtimestamp(os.path.getctime(desktop_path + "/" + file)).strftime('%Y-%m-%d %H:%M:%S')
             cctime = datetime.utcfromtimestamp(os.stat(desktop_path + "/" + file).st_birthtime).strftime('%Y-%m-%d %H:%M:%S')
             files[file] = cctime
 
